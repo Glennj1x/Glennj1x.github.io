@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f8fc">
+<title>Digital Profile | Glenn John S. Ablen</title>
+<style>
+:root{--navy:#183653;--blue:#315d83;--ink:#172433;--muted:#718096;--line:#e7edf3;--bg:#f3f6fa;--green:#2eb879;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(145deg,#eaf3ff 0%,#f7f9fc 36%,#eef7f5 100%);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);padding:28px 14px 50px}
+.page{max-width:520px;margin:auto}
+.topline{display:flex;align-items:center;justify-content:space-between;margin:0 4px 16px;color:#62758a;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.brand{display:flex;gap:8px;align-items:center}
+.brandmark{width:25px;height:25px;border-radius:8px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800}
+.mode-switch{background:#e8edf3;border:1px solid #e1e7ee;border-radius:15px;padding:5px;display:flex;gap:4px;margin:0 0 14px}
+.mode-switch button{border:0;background:transparent;color:#64748b;font:700 13px inherit;padding:11px 14px;border-radius:11px;flex:1;cursor:pointer}
+.mode-switch button.active{background:#fff;color:var(--navy);box-shadow:0 2px 8px #18365318}
+.card{background:var(--white);border:1px solid #e9eef4;border-radius:21px;padding:21px;margin-bottom:13px;box-shadow:0 8px 28px #193b5b0a}
+.hero{text-align:center;padding:25px 22px 20px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;top:0;left:0;right:0;height:105px;background:linear-gradient(110deg,#e5f0ff,#eff8f6);z-index:0}
+.hero>*{position:relative}
+.avatar{width:88px;height:88px;border-radius:50%;border:4px solid #fff;background:linear-gradient(145deg,#d6e5f4,#f1f5f9);margin:8px auto 13px;display:grid;place-items:center;color:var(--navy);font-size:27px;font-weight:800;box-shadow:0 4px 15px #18365320;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+h1{font-size:23px;line-height:1.2;margin:0 0 5px;letter-spacing:-.5px}
+.role{font-size:14px;color:#53677b;margin:0 0 7px}
+.location{font-size:12px;color:var(--muted)}
+.status{display:inline-flex;align-items:center;gap:6px;background:#eaf8f1;color:#168554;border-radius:20px;padding:6px 10px;font-size:11px;font-weight:700;margin-top:12px}
+.dot{width:7px;height:7px;background:#2eb879;border-radius:50%}
+.actions{display:flex;gap:8px;margin-top:18px}
+.action{flex:1;text-decoration:none;border:1px solid var(--line);border-radius:11px;padding:11px 5px;color:var(--navy);font-size:12px;font-weight:750;background:#fff}
+.action.primary{background:var(--navy);border-color:var(--navy);color:#fff}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.section-head h2{font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:#708197;margin:0;font-weight:800}
+.section-icon{width:29px;height:29px;border-radius:9px;background:#edf3f9;color:var(--navy);display:grid;place-items:center;font-size:14px}
+p{font-size:13px;line-height:1.65;color:#536477;margin:0}
+.entry{padding:12px 0;border-top:1px solid var(--line)}
+.entry:first-of-type{border-top:0;padding-top:0}
+.entry-title{font-size:14px;font-weight:800;color:#20364b;margin-bottom:3px}
+.entry-sub{font-size:12px;color:#718096;margin-bottom:6px}
+.pills{display:flex;flex-wrap:wrap;gap:7px}
+.pill{font-size:11px;font-weight:700;color:#315675;background:#edf4fa;border:1px solid #e3edf5;border-radius:20px;padding:7px 10px}
+.contact-list{display:grid;gap:11px}
+.contact-row{display:flex;align-items:center;gap:11px;font-size:13px;color:#43586d}
+.contact-symbol{width:30px;height:30px;border-radius:9px;background:#edf3f9;display:grid;place-items:center;color:var(--navy)}
+.contact-row a{color:inherit;text-decoration:none}
+.footer{text-align:center;color:#8a98a8;font-size:11px;padding:10px}
+[contenteditable="true"]{outline:0;border-radius:4px}
+[contenteditable="true"]:focus{box-shadow:0 0 0 2px #8bb8df66;background:#f7fbff}
+.hint{text-align:center;font-size:11px;color:#8190a0;margin:0 0 15px}
+.hidden{display:none!important}
+@media(min-width:600px){body{padding-top:42px}.page{max-width:470px}.card{padding:23px}.hero{padding-top:28px}}
+@media print{body{background:#fff;padding:0}.page{max-width:100%}.card{box-shadow:none;break-inside:avoid}.mode-switch,.topline,.hint{display:none}}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="topline"><div class="brand"><span class="brandmark">P</span><span>Digital profile</span></div><span>Personal card</span></div>
+  <div class="mode-switch" role="tablist" aria-label="Profile type">
+    <button class="active" id="personalBtn" role="tab" aria-selected="true" onclick="setMode('personal')">Personal</button>
+    <button id="professionalBtn" role="tab" aria-selected="false" onclick="setMode('professional')">Professional</button>
+  </div>
+  <p class="hint">Select text to edit it. Changes stay in this page while it remains open.</p>
+
+  <section class="card hero">
+    <div class="avatar" id="avatar"><img src="data:image/jpeg;base64,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" alt="Glenn John S. Ablen"></div>
+    <h1 contenteditable="true">Glenn John S. Ablen</h1>
+    <div class="role" contenteditable="true" id="headline">IT Graduate | Technical Support</div>
+    <div class="location" contenteditable="true">Kananga, Leyte, Philippines</div>
+    <div class="status"><span class="dot"></span><span contenteditable="true">Open to opportunities</span></div>
+    <div class="actions">
+      <a class="action primary" href="javascript:window.print()">＋ Save profile</a>
+      <a class="action" href="mailto:glennjohn.ablen123@gmail.com">✉ Email</a>
+      <a class="action" href="tel:+639762689247">☎ Call</a>
+    </div>
+  </section>
+
+  <div id="personalView">
+    <section class="card">
+      <div class="section-head"><h2>About me</h2><span class="section-icon">✦</span></div>
+      <p contenteditable="true">I am an Information Technology graduate with hands-on experience in hardware and software troubleshooting, system setup, and basic networking. I enjoy providing responsive, efficient, and user-friendly technical support. I am a fast learner with strong communication skills and a willingness to learn and adapt, including through the use of AI tools.</p>
+    </section>
+    <section class="card">
+      <div class="section-head"><h2>Interests</h2><span class="section-icon">♡</span></div>
+      <div class="pills"><span class="pill" contenteditable="true">Technology</span><span class="pill" contenteditable="true">Learning</span><span class="pill" contenteditable="true">Creative projects</span><span class="pill" contenteditable="true">Community</span></div>
+    </section>
+  </div>
+
+  <div id="professionalView" class="hidden">
+    <section class="card">
+      <div class="section-head"><h2>Professional summary</h2><span class="section-icon">▤</span></div>
+      <p contenteditable="true">Detail-oriented Information Technology graduate with hands-on experience in hardware and software troubleshooting, system setup, and basic networking. Passionate about delivering responsive, efficient, and user-friendly technical solutions to help ensure system uptime. Eager to contribute to an IT team through strong communication skills and a fast-learning aptitude.</p>
+    </section>
+    <section class="card">
+      <div class="section-head"><h2>Work & company</h2><span class="section-icon">▣</span></div>
+      <div class="entry">
+        <div class="entry-title" contenteditable="true">IT Staff</div>
+        <div class="entry-sub" contenteditable="true">Municipal Health Office of Kananga · Present</div>
+        <p contenteditable="true">Assist patients with information and guidance regarding PhilHealth YAKAP; prepare and manage office documents; edit and update digital files and records; and create layout designs and other visual materials to support office needs.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-title" contenteditable="true">Office Staff</div>
+        <div class="entry-sub" contenteditable="true">Eajea Sand and Gravel, Poblacion, Kananga, Leyte · February 2025 – June 2025</div>
+        <p contenteditable="true">Provided basic computer troubleshooting and printer setup for office staff; maintained digital records and assisted with system backups; coordinated documentation and data entry for logistics and transactions; and handled walk-in and phone inquiries.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-title" contenteditable="true">Agent / Researcher</div>
+        <div class="entry-sub" contenteditable="true">Fenestra Virtual Solution, Mejia, Ormoc City, Leyte · February 2024 – August 2024</div>
+        <p contenteditable="true">Assisted in resolving technical issues for remote systems; supported virtual teams with troubleshooting tasks and software setups; conducted online research and data analysis; and assisted with virtual administrative tasks.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-title" contenteditable="true">Sound Technician / DJ (Part-Time)</div>
+        <div class="entry-sub" contenteditable="true">MGP Music Production, Poblacion, Kananga, Leyte · November 2023 – Present</div>
+        <p contenteditable="true">Managed live sound systems during events and functions, ensured audio quality, and handled setup and troubleshooting of DJ equipment.</p>
+      </div>
+    </section>
+    <section class="card">
+      <div class="section-head"><h2>Education</h2><span class="section-icon">⌂</span></div>
+      <div class="entry">
+        <div class="entry-title" contenteditable="true">Bachelor of Science in Information Technology</div>
+        <div class="entry-sub" contenteditable="true">Eastern Visayas State University, Ormoc City, Philippines · Graduate, 2025</div>
+        <p contenteditable="true">Completed the Bachelor of Science in Information Technology program in 2025.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-title" contenteditable="true">Kananga National High School</div>
+        <div class="entry-sub" contenteditable="true">Poblacion, Kananga, Leyte · Graduate, 2014</div>
+      </div>
+      <div class="entry">
+        <div class="entry-title" contenteditable="true">Kananga Centra School</div>
+        <div class="entry-sub" contenteditable="true">Poblacion, Kananga, Leyte · Graduate, 2010</div>
+      </div>
+    </section>
+    <section class="card">
+      <div class="section-head"><h2>Skills</h2><span class="section-icon">✧</span></div>
+      <div class="pills">
+        <span class="pill" contenteditable="true">Hardware Troubleshooting</span><span class="pill" contenteditable="true">Software Troubleshooting</span><span class="pill" contenteditable="true">Windows OS</span><span class="pill" contenteditable="true">Remote Support Tools</span><span class="pill" contenteditable="true">Microsoft Office</span><span class="pill" contenteditable="true">LAN/WAN Basics</span><span class="pill" contenteditable="true">Customer Service</span><span class="pill" contenteditable="true">Communication</span><span class="pill" contenteditable="true">Data Entry & Research</span><span class="pill" contenteditable="true">Fast Learner</span>
+      </div>
+    </section>
+    <section class="card">
+      <div class="section-head"><h2>Certifications & languages</h2><span class="section-icon">◇</span></div>
+      <div class="entry">
+        <div class="entry-title" contenteditable="true">Public Service Continuity Planning</div>
+        <div class="entry-sub" contenteditable="true">September 2026</div>
+      </div>
+      <div class="entry">
+        <div class="entry-title" contenteditable="true">Red Cross First Aider</div>
+        <div class="entry-sub" contenteditable="true">April 2025</div>
+      </div>
+      <div class="entry">
+        <div class="entry-title" contenteditable="true">Contact Center Servicing NCII</div>
+        <div class="entry-sub" contenteditable="true">July 2024</div>
+      </div>
+      <div class="entry">
+        <div class="entry-title" contenteditable="true">Languages</div>
+        <div class="entry-sub" contenteditable="true">English · Filipino</div>
+      </div>
+    </section>
+  </div>
+
+  <section class="card">
+    <div class="section-head"><h2>Contact</h2><span class="section-icon">↗</span></div>
+    <div class="contact-list">
+      <div class="contact-row"><span class="contact-symbol">✉</span><span contenteditable="true">glennjohn.ablen123@gmail.com</span></div>
+      <div class="contact-row"><span class="contact-symbol">☎</span><span contenteditable="true">+63 976 268 9247</span></div>
+      <div class="contact-row"><span class="contact-symbol">in</span><span contenteditable="true">www.linkedin.com/in/glennj1x</span></div>
+    </div>
+  </section>
+  <div class="footer">A little introduction, wherever you go.</div>
+</main>
+<script>
+function setMode(mode){
+  const personal=mode==='personal';
+  document.getElementById('personalView').classList.toggle('hidden',!personal);
+  document.getElementById('professionalView').classList.toggle('hidden',personal);
+  document.getElementById('personalBtn').classList.toggle('active',personal);
+  document.getElementById('professionalBtn').classList.toggle('active',!personal);
+  document.getElementById('personalBtn').setAttribute('aria-selected',String(personal));
+  document.getElementById('professionalBtn').setAttribute('aria-selected',String(!personal));
+  document.getElementById('headline').textContent=personal?'IT Graduate | Technical Support':'IT Graduate | Technical Support';
+}
+</script>
+</body>
+</html>
