@@ -92,6 +92,26 @@ p{font-size:13px;line-height:1.65;color:#536477;margin:0; transition: 0.3s;}
 [data-theme="dark"] .theme-btn:hover, [data-theme="dark"] .copy-btn:hover {background:#334155}
 [data-theme="dark"] .gallery-item:hover {box-shadow:0 8px 16px rgba(0,0,0,0.5);}
 
+
+/* Portfolio password screen */
+.portfolio-lock{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(15,23,42,.58);backdrop-filter:blur(7px)}
+.portfolio-lock.show{display:flex}
+.portfolio-lock-card{width:100%;max-width:390px;background:var(--white);border:1px solid #e7edf3;border-radius:21px;padding:25px;box-shadow:0 20px 60px #0f172a35;text-align:center}
+.portfolio-lock-icon{width:52px;height:52px;margin:0 auto 14px;border-radius:16px;display:grid;place-items:center;background:#edf4fa;color:var(--navy);font-size:23px}
+.portfolio-lock-card h2{font-size:18px;margin:0 0 7px;color:var(--ink)}
+.portfolio-lock-card p{font-size:12px;margin:0 0 17px;color:var(--muted)}
+.portfolio-lock-card input{width:100%;padding:12px 13px;border:1px solid #dce5ee;border-radius:11px;font:inherit;font-size:14px;outline:0;background:#fff;color:#172433}
+.portfolio-lock-card input:focus{border-color:#8bb8df;box-shadow:0 0 0 3px #8bb8df33}
+.portfolio-lock-actions{display:flex;gap:8px;margin-top:11px}
+.portfolio-lock-actions button{flex:1;border:1px solid var(--line);border-radius:10px;padding:11px;font:700 12px inherit;cursor:pointer;background:#fff;color:var(--navy)}
+.portfolio-lock-actions button.primary{background:var(--navy);border-color:var(--navy);color:#fff}
+.portfolio-lock-error{min-height:18px;margin-top:10px!important;color:#c0392b!important;font-size:11px!important}
+[data-theme="dark"] .portfolio-lock-card{background:#1e293b;border-color:#334155}
+[data-theme="dark"] .portfolio-lock-card h2{color:#f1f5f9}
+[data-theme="dark"] .portfolio-lock-card input{background:#0f172a;border-color:#475569;color:#f1f5f9}
+[data-theme="dark"] .portfolio-lock-actions button{background:#1e293b;border-color:#475569;color:#f1f5f9}
+[data-theme="dark"] .portfolio-lock-actions button.primary{background:#3b82f6;border-color:#3b82f6;color:#fff}
+
 /* Improved Desktop Mode Scaling */
 @media(min-width:600px){
   body{padding-top:60px; padding-bottom:80px;}
@@ -211,75 +231,7 @@ p{font-size:13px;line-height:1.65;color:#536477;margin:0; transition: 0.3s;}
     </section>
   </div>
 
-  <div id="professionalView" class="hidden">
-    <section class="card">
-      <div class="section-head"><h2>Professional summary</h2><span class="section-icon">▤</span></div>
-      <p contenteditable="true">Detail-oriented Information Technology graduate with hands-on experience in hardware and software troubleshooting, system setup, and basic networking. Passionate about delivering responsive, efficient, and user-friendly technical solutions to help ensure system uptime. Eager to contribute to an IT team through strong communication skills and a fast-learning aptitude.</p>
-    </section>
-    <section class="card">
-      <div class="section-head"><h2>Work & company</h2><span class="section-icon">▣</span></div>
-      <div class="entry">
-        <div class="entry-title" contenteditable="true">IT Staff</div>
-        <div class="entry-sub" contenteditable="true">Municipal Health Office of Kananga · November 5 - Present</div>
-        <p contenteditable="true">Assist patients with information and guidance regarding PhilHealth YAKAP; prepare and manage office documents; edit and update digital files and records; and create layout designs and other visual materials to support office needs.</p>
-      </div>
-      <div class="entry">
-        <div class="entry-title" contenteditable="true">Office Staff</div>
-        <div class="entry-sub" contenteditable="true">Eajea Sand and Gravel, Poblacion, Kananga, Leyte · February 2025 – June 2025</div>
-        <p contenteditable="true">Provided basic computer troubleshooting and printer setup for office staff; maintained digital records and assisted with system backups; coordinated documentation and data entry for logistics and transactions; and handled walk-in and phone inquiries.</p>
-      </div>
-      <div class="entry">
-        <div class="entry-title" contenteditable="true">Agent / Researcher</div>
-        <div class="entry-sub" contenteditable="true">Fenestra Virtual Solution, Mejia, Ormoc City, Leyte · February 2024 – August 2024</div>
-        <p contenteditable="true">Assisted in resolving technical issues for remote systems; supported virtual teams with troubleshooting tasks and software setups; conducted online research and data analysis; and assisted with virtual administrative tasks.</p>
-      </div>
-      <div class="entry">
-        <div class="entry-title" contenteditable="true">Sound Technician / DJ (Part-Time)</div>
-        <div class="entry-sub" contenteditable="true">MGP Music Production, Poblacion, Kananga, Leyte · November 2023 – Present</div>
-        <p contenteditable="true">Managed live sound systems during events and functions, ensured audio quality, and handled setup and troubleshooting of DJ equipment.</p>
-      </div>
-    </section>
-    <section class="card">
-      <div class="section-head"><h2>Education</h2><span class="section-icon">⌂</span></div>
-      <div class="entry">
-        <div class="entry-title" contenteditable="true">Bachelor of Science in Information Technology</div>
-        <div class="entry-sub" contenteditable="true">Eastern Visayas State University, Ormoc City, Philippines · Graduate</div>
-      </div>
-      <div class="entry">
-        <div class="entry-title" contenteditable="true">Kananga National High School</div>
-        <div class="entry-sub" contenteditable="true">Poblacion, Kananga, Leyte · Graduate</div>
-      </div>
-      <div class="entry">
-        <div class="entry-title" contenteditable="true">Kananga Centra School</div>
-        <div class="entry-sub" contenteditable="true">Poblacion, Kananga, Leyte · Graduate</div>
-      </div>
-    </section>
-    <section class="card">
-      <div class="section-head"><h2>Skills</h2><span class="section-icon">✧</span></div>
-      <div class="pills">
-        <span class="pill" contenteditable="true">Hardware Troubleshooting</span><span class="pill" contenteditable="true">Software Troubleshooting</span><span class="pill" contenteditable="true">Windows OS</span><span class="pill" contenteditable="true">Remote Support Tools</span><span class="pill" contenteditable="true">Microsoft Office</span><span class="pill" contenteditable="true">LAN/WAN Basics</span><span class="pill" contenteditable="true">Customer Service</span><span class="pill" contenteditable="true">Communication</span><span class="pill" contenteditable="true">Data Entry & Research</span><span class="pill" contenteditable="true">Fast Learner</span>
-      </div>
-    </section>
-    <section class="card">
-      <div class="section-head"><h2>Certifications & languages</h2><span class="section-icon">◇</span></div>
-      <div class="entry">
-        <div class="entry-title" contenteditable="true">Public Service Continuity Planning</div>
-        <div class="entry-sub" contenteditable="true">September 2026</div>
-      </div>
-      <div class="entry">
-        <div class="entry-title" contenteditable="true">Red Cross First Aider</div>
-        <div class="entry-sub" contenteditable="true">April 2025</div>
-      </div>
-      <div class="entry">
-        <div class="entry-title" contenteditable="true">Contact Center Servicing NCII</div>
-        <div class="entry-sub" contenteditable="true">July 2024</div>
-      </div>
-      <div class="entry">
-        <div class="entry-title" contenteditable="true">Languages</div>
-        <div class="entry-sub" contenteditable="true">English · Filipino</div>
-      </div>
-    </section>
-  </div>
+  <div id="professionalView" class="hidden"></div>
 
   <section class="card">
     <div class="section-head"><h2>Contact</h2><span class="section-icon">↗</span></div>
@@ -290,17 +242,94 @@ p{font-size:13px;line-height:1.65;color:#536477;margin:0; transition: 0.3s;}
     </div>
   </section>
 </main>
+
+<div class="portfolio-lock" id="portfolioLock" role="dialog" aria-modal="true" aria-labelledby="portfolioLockTitle">
+  <form class="portfolio-lock-card" id="portfolioPasswordForm">
+    <div class="portfolio-lock-icon">🔒</div>
+    <h2 id="portfolioLockTitle">Private Portfolio</h2>
+    <p>Enter the shared password to view the professional portfolio.</p>
+    <input type="password" id="portfolioPassword" placeholder="Enter portfolio password" autocomplete="current-password" required>
+    <div class="portfolio-lock-actions">
+      <button type="button" onclick="closePortfolioLock()">Cancel</button>
+      <button type="submit" class="primary" id="portfolioUnlockBtn">Unlock</button>
+    </div>
+    <p class="portfolio-lock-error" id="portfolioLockError" aria-live="polite"></p>
+  </form>
+</div>
+
 <script>
+const PORTFOLIO_WORKER_URL = "https://glenn-private-portfolio-2026.glennjohn-ablen123.workers.dev";
+
 function setMode(mode){
   const personal=mode==='personal';
+  if(!personal && !sessionStorage.getItem('portfolioMarkup')){
+    openPortfolioLock();
+    return;
+  }
+  if(!personal){
+    showPortfolio(sessionStorage.getItem('portfolioMarkup'));
+  }
   document.getElementById('personalView').classList.toggle('hidden',!personal);
   document.getElementById('professionalView').classList.toggle('hidden',personal);
   document.getElementById('personalBtn').classList.toggle('active',personal);
   document.getElementById('professionalBtn').classList.toggle('active',!personal);
   document.getElementById('personalBtn').setAttribute('aria-selected',String(personal));
   document.getElementById('professionalBtn').setAttribute('aria-selected',String(!personal));
-  document.getElementById('headline').textContent=personal?'IT Graduate | Technical Support':'IT Graduate | Technical Support';
+  document.getElementById('headline').textContent='IT Graduate | Technical Support';
 }
+
+function openPortfolioLock(){
+  document.getElementById('portfolioLock').classList.add('show');
+  document.getElementById('portfolioLockError').textContent='';
+  document.getElementById('portfolioPassword').value='';
+  setTimeout(()=>document.getElementById('portfolioPassword').focus(),50);
+}
+
+function closePortfolioLock(){
+  document.getElementById('portfolioLock').classList.remove('show');
+  document.getElementById('professionalBtn').classList.remove('active');
+  document.getElementById('professionalBtn').setAttribute('aria-selected','false');
+  document.getElementById('personalBtn').classList.add('active');
+  document.getElementById('personalBtn').setAttribute('aria-selected','true');
+}
+
+function showPortfolio(markup){
+  const view=document.getElementById('professionalView');
+  view.innerHTML=markup;
+  view.classList.remove('hidden');
+  document.getElementById('personalView').classList.add('hidden');
+  document.getElementById('personalBtn').classList.remove('active');
+  document.getElementById('professionalBtn').classList.add('active');
+  document.getElementById('personalBtn').setAttribute('aria-selected','false');
+  document.getElementById('professionalBtn').setAttribute('aria-selected','true');
+  document.getElementById('portfolioLock').classList.remove('show');
+}
+
+document.getElementById('portfolioPasswordForm').addEventListener('submit',async function(event){
+  event.preventDefault();
+  const password=document.getElementById('portfolioPassword').value;
+  const button=document.getElementById('portfolioUnlockBtn');
+  const error=document.getElementById('portfolioLockError');
+  button.disabled=true;
+  button.textContent='Checking...';
+  error.textContent='';
+  try{
+    if(PORTFOLIO_WORKER_URL.includes('YOUR-WORKER-NAME')) throw new Error('Setup required: add your Cloudflare Worker URL first.');
+    const response=await fetch(PORTFOLIO_WORKER_URL,{
+      method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password})
+    });
+    const result=await response.json();
+    if(!response.ok || !result.ok) throw new Error(result.message||'Incorrect password. Please try again.');
+    sessionStorage.setItem('portfolioMarkup',result.html);
+    showPortfolio(result.html);
+    document.getElementById('portfolioPassword').value='';
+  }catch(err){
+    error.textContent=err.message==='Failed to fetch'?'Unable to connect. Check your internet connection and Worker URL.':err.message;
+  }finally{
+    button.disabled=false;
+    button.textContent='Unlock';
+  }
+});
 
 function toggleTheme() {
   const htmlElement = document.documentElement;
@@ -326,6 +355,8 @@ function copyToClipboard(elementId) {
     console.error('Failed to copy: ', err);
   });
 }
+
+document.addEventListener('keydown',event=>{if(event.key==='Escape')closePortfolioLock();});
 
 // Auto-detect system theme on load
 function detectSystemTheme() {
